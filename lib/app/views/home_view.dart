@@ -4,14 +4,21 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset('assets/images/logo.png'),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Row(
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/logo.png',
+              width: 100,
+              height: 100,
+            ),
+            Row(
               children: [
-                Expanded(child: DropdownButton(items: [])),
+                Expanded(
+                  child: DropdownButton(items: []),
+                ),
                 Expanded(
                   child: TextField(
                       decoration: InputDecoration(
@@ -20,12 +27,12 @@ class HomeView extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          ElevatedButton(
-            child: Text('Converter'),
-            onPressed: () {},
-          ),
-        ],
+            ElevatedButton(
+              child: Text('Converter'),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
